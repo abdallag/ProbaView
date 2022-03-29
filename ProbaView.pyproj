@@ -30,6 +30,7 @@
     <Compile Include="app.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.yaml" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
