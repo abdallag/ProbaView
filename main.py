@@ -17,7 +17,7 @@ def hello():
     client = secretmanager.SecretManagerServiceClient()
 
     secret = client.get_secret(
-                        request={"name": f"projects/caip-growth-experiments/secret/neo4j1g"}
+                        request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g"}
                    )
     return secret
 
