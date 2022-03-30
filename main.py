@@ -16,10 +16,14 @@ wsgi_app = app.wsgi_app
 def hello():
     client = secretmanager.SecretManagerServiceClient()
 
-    secret = client.get_secret(
-                        request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g"}
+    secret = client.access_secret_version(
+                        request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g/version/1"}
                    )
-    return len(secret)
+    if len(secret.payload.data) > 0:
+        result = 'Secret Found ' + len(secret.payload.data)
+    else:
+        result = "Error"
+    return result
 
 if __name__ == '__main__':
     import os
