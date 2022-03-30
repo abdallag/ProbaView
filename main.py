@@ -19,7 +19,7 @@ def hello():
     secret = client.get_secret(
                         request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g"}
                    )
-    return secret
+    return len(secret)
 
 if __name__ == '__main__':
     import os
