@@ -20,7 +20,7 @@ def hello():
                         request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g/versions/1"}
                    )
     if len(secret.payload.data) > 0:
-        result = 'Secret Found ' + len(secret.payload.data)
+        result = 'Secret Found ' + str(len(secret.payload.data))
     else:
         result = "Error"
     return result
