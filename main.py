@@ -17,7 +17,7 @@ def hello():
     client = secretmanager.SecretManagerServiceClient()
 
     secret = client.access_secret_version(
-                        request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g/version/1"}
+                        request={"name": f"projects/caip-growth-experiments/secrets/neo4j1g/versions/1"}
                    )
     if len(secret.payload.data) > 0:
         result = 'Secret Found ' + len(secret.payload.data)
